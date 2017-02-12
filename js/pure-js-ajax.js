@@ -35,9 +35,20 @@ function ajax( ajaxOptions ) {
    httpReq.onreadystatechange = function () {
 
       if(httpReq.readyState == 4){
-         //sprawdzenie succesu
+            //sprawdzenie succesu
             if(httpSuccess(httpReq)) {
                
+               var returnData = (options.dataType == "xml")? httpReq.responseXML : httpReq.responseText ;
+               
+                  //jesli wszystko ok
+               options.onSuccess (returnData);
+               
+                  //zeruj obiekt , drop połączenie
+               httpReq = null;
+               
+            } else {
+                  // w przypadku bledu
+               options.onError(httpReq.statusText);
             }
       }
    }
