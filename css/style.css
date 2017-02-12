@@ -8,3 +8,15 @@ html {
 
 a{color: yellow;}
 
+.logo{
+   width: 300px;
+   margin:0;
+   height: 150px;
+   transform: scale(0.75);
+   background-image: url("http://www.bcat.eu/blog/wp-content/uploads/2013/04/jquery-bg-switcher.jpg");
+   background-repeat: no-repeat;
+   overflow: hidden;
+   float:right;
+   display: inline-block;
+}
+

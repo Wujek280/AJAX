@@ -3,16 +3,17 @@ $(document).ready( function() {
   'use strict';
       
    $('#pobierz-dane').click( function() {
+      
       // drugi sposob $.ajax
-        $.ajax({
+/*        $.ajax({
             url: "http://echo.jsontest.com/userId/108/userName/Akademia108/userURL/akademia108.pl",
             dataType: 'json',
             success: function (resultJSON) {
 
-                /*
+                
                 !!! Nie parsujemy do postaci obiektu JSON, bo od razu taki obiekt dostajemy w odpowiedzi !!!
                 var jsonObj = JSON.parse(resultJSON);
-                */
+                
 
                 console.log(resultJSON);
 
@@ -31,7 +32,28 @@ $(document).ready( function() {
             onerror: function (msg) {
                 console.log(msg);
             }
-        });
+        });*/
+      
+      //pierwszy sposob $.getJson
+      
+      $.getJSON("http://echo.jsontest.com/userId/108/userName/Akademia108/userURL/akademia108.pl",
+         function (data){
+         
+            console.log(data);
+         
+                var pUserId = document.createElement('p');
+                var pUserName = document.createElement('p');
+                var pUserURL = document.createElement('p');
+
+                pUserId.innerHTML = "<hr>User ID: " + data.userId;
+                pUserName.innerHTML = "User Name: " + data.userName;
+                pUserURL.innerHTML = "User URL: http://" + data.userURL+"<hr>";
+
+                document.body.appendChild(pUserId);
+                document.body.appendChild(pUserName);
+                document.body.appendChild(pUserURL);
+               
+         });
       
    });
    
