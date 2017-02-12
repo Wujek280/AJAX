@@ -8,19 +8,6 @@ html {
 
 a{color: yellow;}
 
-
-.square {
-   width: 200px;
-   height: 200px;
-   background-color: red;
-   float:right;
-   animation: ruszSie;
-}
-
-@keyframes ruszSie() {
-   
-}
-
 .logo{
    width: 300px;
    margin:0;
