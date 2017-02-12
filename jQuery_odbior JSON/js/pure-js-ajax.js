@@ -75,7 +75,9 @@ function pobierzDane(e) {
          var pUserId = document.createElement('p');
          var pUserName = document.createElement('p');
          var pUserURL = document.createElement('p');
-
+         var logo = document.createElement('div').
+         logo.addClass('logo');
+         
          
          document.body.appendChild(pUserId);
          document.body.appendChild(pUserName);

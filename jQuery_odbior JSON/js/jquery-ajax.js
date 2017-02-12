@@ -48,15 +48,10 @@ $(document).ready( function() {
                 pUserId.innerHTML = "<hr>User ID: " + data.userId;
                 pUserName.innerHTML = "User Name: " + data.userName;
                 pUserURL.innerHTML = "User URL: http://" + data.userURL+"<hr>";
-                  var logo = document.createElement('div');
-                  logo.addClass('logo');
-         
-         
 
                 document.body.appendChild(pUserId);
                 document.body.appendChild(pUserName);
                 document.body.appendChild(pUserURL);
-                document.body.appendChild(logo);
                
          });
       
