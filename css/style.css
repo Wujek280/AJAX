@@ -4,6 +4,7 @@ html {
     background-color: #303030;
 	font-size: 16px;
 	color: #fff;
+   text-align: center;
 }
 
 a{color: yellow;}
@@ -13,13 +14,10 @@ a{color: yellow;}
    width: 200px;
    height: 200px;
    background-color: red;
-   float:right;
-   animation: ruszSie;
+/*   float:right;*/
 }
 
-@keyframes ruszSie() {
-   
-}
+
 
 .logo{
    width: 300px;
