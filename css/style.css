@@ -17,6 +17,17 @@ a{color: yellow;}
 /*   float:right;*/
 }
 
+.square2 {
+   width: 200px;
+   height: 200px;
+   background-color: blue;
+   position: absolute;
+   margin:0;
+   border: 1px dotted white;
+   opacity: 0.3;
+/*   float:right;*/
+}
+
 
 
 .logo{

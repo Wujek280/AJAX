@@ -7,10 +7,14 @@ button.setAttribute('id', 'przycisk');
  document.body.appendChild(button);
 
 var sq = document.createElement('div');
+var header = document.createElement('h2');
 sq.setAttribute('id', 'sq');
  sq.setAttribute('class', 'square');
- //$('#sq').css.position = 'absolute';
  document.body.appendChild(sq);
+
+ header.innerHTML = "";
+document.getElementById('sq').appendChild(header);
+
 
 $(document).ready(function () {
    
@@ -18,7 +22,11 @@ $(document).ready(function () {
       
    console.log("heh");
       
-     $( '#sq').animate({ width:"100px", height:"100px", marginLeft:"100px" }, 3000,function() {
+     $('#sq').animate({ width:"100px", height:"100px", marginLeft:"100px" }, 300,function() {
+      $('#sq').animate({"backgroundColor":"blue"},500,function() {
+         document.getElementById('sq').appendChild(header);
+          header.innerHTML = "Gz!";         
+      })
         
      });
       
