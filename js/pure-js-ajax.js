@@ -1,6 +1,7 @@
 'use strict';
 
 function ajax( ajaxOptions ) {
+   
    var options = {
          type: ajaxOptions.type || "POST",
          url: ajaxOptions.url || "",
@@ -13,7 +14,7 @@ function ajax( ajaxOptions ) {
       //sprawdza czy polaczenie sie udało <<>>
    function httpSuccess( httpRequest ) {
       try {
-         return (httpRequest.status >= 300 && httpRequest.status <300 || httpRequest.status == 304 || navigator.userAgent.indexOf("Safari") >= 0 && typeof httpRequest.status == "undefined");
+         return (httpRequest.status >= 200 && httpRequest.status <300 || httpRequest.status == 304 || navigator.userAgent.indexOf("Safari") >= 0 && typeof httpRequest.status == "undefined");
       } catch(e) {
          return false;
       }
@@ -23,7 +24,7 @@ function ajax( ajaxOptions ) {
    
 
       //utworzenie obiektu
-   var httpReq = new XHTMLHttpRequest();
+   var httpReq = new XMLHttpRequest();
 
       //otwarcie połączenia 
    httpReq.open(options.type, options.url, true);
@@ -49,19 +50,29 @@ function ajax( ajaxOptions ) {
             }
       }
    }
-
    httpReq.send();
 };
 
 ///////////////////////////////////////////////////////////////
 
-   function pobierzDane(e) {
-      e.preventDefault();
-      
-      console.log("Czteroliterowe słowo testowe na 'd' ")
+function pobierzDane(e) {
+   e.preventDefault();
+
    
-   }
+   ajax({
+      type: "GET"
+      , url: "http://echo.jsontest.com/userId/108/userName/Akademia108/userURL/akademia108.pl"
+      , onError: function (msg) {
+         
+         console.log("teak tutej");
+      }
+      , onSuccess: function (response) {
+         console.log("połączenie działa i dane sa pobierane ..//////////////// 99%");
+      }
+   });
+}
 
 ///////////////////////////////////////////////////////////////
 
 
+//console.log("Czteroliterowe słowo testowe na 'd' ")
