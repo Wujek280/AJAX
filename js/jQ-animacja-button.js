@@ -13,7 +13,7 @@ sq.setAttribute('id', 'sq');
  document.body.appendChild(sq);
 
  header.innerHTML = "";
-document.getElementById('sq').appendChild(header);
+
 
 
 $(document).ready(function () {
@@ -22,8 +22,8 @@ $(document).ready(function () {
       
    console.log("heh");
       
-     $('#sq').animate({ width:"100px", height:"100px", marginLeft:"100px" }, 300,function() {
-      $('#sq').animate({"backgroundColor":"blue"},500,function() {
+     $('#sq').animate({ width:"100px", height:"100px", marginLeft:"100px" }, 3000,function() {
+      $('#sq').animate({"backgroundColor":"blue"},5000,function() {
          document.getElementById('sq').appendChild(header);
           header.innerHTML = "Gz!";         
       })
