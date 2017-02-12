@@ -44,19 +44,23 @@ $(document).ready( function() {
                 var pUserId = document.createElement('p');
                 var pUserName = document.createElement('p');
                 var pUserURL = document.createElement('p');
-
-                pUserId.innerHTML = "<hr>User ID: " + data.userId;
-                pUserName.innerHTML = "User Name: " + data.userName;
-                pUserURL.innerHTML = "User URL: http://" + data.userURL+"<hr>";
-                  var logo = document.createElement('div');
+         
+               var logo = document.createElement('div');
                   logo.addClass('logo');
          
          
 
+                pUserId.innerHTML = "<hr>User ID: " + data.userId;
+                pUserName.innerHTML = "User Name: " + data.userName;
+                pUserURL.innerHTML = "User URL: http://" + data.userURL+"<hr>";
+
+         
+         
+                document.body.appendChild(logo);
                 document.body.appendChild(pUserId);
                 document.body.appendChild(pUserName);
                 document.body.appendChild(pUserURL);
-                document.body.appendChild(logo);
+                
                
          });
       
