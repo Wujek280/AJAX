@@ -21,9 +21,6 @@ function ajax( ajaxOptions ) {
    }
    
    
-   function pobierzDane() {
-   
-   }
 
       //utworzenie obiektu
    var httpReq = new XHTMLHttpRequest();
@@ -55,4 +52,16 @@ function ajax( ajaxOptions ) {
 
    httpReq.send();
 };
+
+///////////////////////////////////////////////////////////////
+
+   function pobierzDane(e) {
+      e.preventDefault();
+      
+      console.log("Czteroliterowe słowo testowe na 'd' ")
+   
+   }
+
+///////////////////////////////////////////////////////////////
+
 
