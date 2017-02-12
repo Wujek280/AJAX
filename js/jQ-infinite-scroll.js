@@ -11,10 +11,9 @@ $(document).ready(function () {
                var pUserId = document.createElement('p');
                var pUserName = document.createElement('p');
                var pUserURL = document.createElement('p');
-               
                pUserId.innerHTML = "<hr>User ID: " + data[index].id;
                pUserName.innerHTML = "User Name: " + data[index].username;
-               pUserURL.innerHTML = "User URL: http://" + data[index].website + "<hr>";
+               pUserURL.innerHTML = "User URL: http://" + data[index].email + "<hr>";
                
                if (index == 0) {
                   endOfLine.innerHTML = "-------------BEGIN------------";
