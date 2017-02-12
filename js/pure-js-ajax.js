@@ -64,10 +64,26 @@ function pobierzDane(e) {
       , url: "http://echo.jsontest.com/userId/108/userName/Akademia108/userURL/akademia108.pl"
       , onError: function (msg) {
          
-         console.log("teak tutej");
+         console.log(msg);
       }
       , onSuccess: function (response) {
-         console.log("połączenie działa i dane sa pobierane ..//////////////// 99%");
+         
+               //rzutowanie na dżejsona
+         var jsonObj = JSON.parse( response );
+            console.log("jsonOBJ: ",jsonObj);
+         
+         var pUserId = document.createElement('p');
+         var pUserName = document.createElement('p');
+         var pUserURL = document.createElement('p');
+         
+         document.body.appendChild(pUserId);
+         document.body.appendChild(pUserName);
+         document.body.appendChild(pUserURL);
+         
+         pUserId.innerHTML=   "<hr>USER ID: "+ jsonObj.userId;
+         pUserName.innerHTML= "   NAME: "+ jsonObj.userName;
+         pUserURL.innerHTML=  "    URL: "+ jsonObj.userURL+"<br><hr>";
+ 
       }
    });
 }
@@ -76,3 +92,8 @@ function pobierzDane(e) {
 
 
 //console.log("Czteroliterowe słowo testowe na 'd' ")
+
+//        
+//         
+//         console.log("połączenie działa i dane sa pobierane ..//////////////// 99% \n jeszcze chwilę...");
+//
